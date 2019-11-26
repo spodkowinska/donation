@@ -3,20 +3,20 @@
 
 <jsp:include page="header.jsp"/>
 
-    <div class="slogan container container--90">
-        <div class="slogan--item">
-            <h1>
-                Zacznij pomagać!<br/>
-                Oddaj niechciane rzeczy w zaufane ręce
-            </h1>
-        </div>
+<div class="slogan container container--90">
+    <div class="slogan--item">
+        <h1>
+            Zacznij pomagać!<br/>
+            Oddaj niechciane rzeczy w zaufane ręce
+        </h1>
     </div>
+</div>
 </header>
 
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
-            <em>13</em>
+            <em><c:out value="${quantityOfDonations}"/></em>
 
             <h3>Oddanych worków</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
@@ -24,7 +24,7 @@
         </div>
 
         <div class="stats--item">
-            <em>5</em>
+            <em><c:out value="${numberOfInstitutions}"/></em>
             <h3>Wspartych organizacji</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>
@@ -83,30 +83,19 @@
 
         <ul class="help--slides-items">
             <li>
+                <c:forEach items="${institutions}" var="institution" varStatus="loopCounter">
                 <div class="col">
-                    <div class="title">Fundacja "Dbam o Zdrowie"</div>
-                    <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>
+                    <div class="title"><c:out value="${institution.name}"/></div>
+                    <div class="subtitle"><c:out value="${institution.description}"/></div>
                 </div>
-
-                <div class="col">
-                    <div class="title">Fundacja "A kogo"</div>
-                    <div class="subtitle">Cel i misja: Pomoc w wybudzaniu dzieci ze śpiączki.</div>
-                </div>
+                <c:if test="${loopCounter.count % 2 ==0}">
             </li>
-
             <li>
-                <div class="col">
-                    <div class="title">Fundacja “Dla dzieci"</div>
-                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>
-                </div>
-                <div class="col">
-                    <div class="title">Fundacja “Bez domu”</div>
-                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>
-                </div>
-
+                </c:if>
+                </c:forEach>
             </li>
-
         </ul>
+
     </div>
 
 </section>
