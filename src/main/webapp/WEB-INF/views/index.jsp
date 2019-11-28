@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<!-- TODO czemu nie rozpoznaje header.jsp a działa poprawnie. jak byc powinno?
+TODO jakie znaczenie ma, w którym miejscu zakończę header, czy dzieli się go w zależnoci od zalogowanego lub nie użytkownika?-->
 <jsp:include page="header.jsp"/>
 
 <div class="slogan container container--90">

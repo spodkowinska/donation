@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
 <body>
-<header class="header--main-page">
+<header>
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+            <li><a href="<c:url value="/login"/>">Zaloguj</a></li>
+            <li class="highlighted"><a href="<c:url value="/registration"/>">Załóż konto</a></li>
         </ul>
 
         <ul>

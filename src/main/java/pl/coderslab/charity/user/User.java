@@ -1,6 +1,8 @@
 package pl.coderslab.charity.user;
 
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -21,9 +23,9 @@ public class User implements Serializable {
     @NotBlank
     private String lastname;
 
-//@TODO Add unique to email
+
     @NotBlank
-//    @Email
+    @Column(unique=true)
     private String username;
 
     @NotBlank

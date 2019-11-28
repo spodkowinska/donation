@@ -31,4 +31,16 @@ public class HomeController {
         model.addAttribute("numberOfInstitutions", numberOfInstitutions);
         return "index";
     }
+
+    @RequestMapping("/login")
+    public String loginAction(Model model) {
+
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String registerAction(Model model) {
+
+        return "register";
+    }
 }

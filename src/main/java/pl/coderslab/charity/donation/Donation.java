@@ -20,31 +20,31 @@ import java.util.List;
 public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
     /*
         number of bags 60l
          */
     @NotNull
-    private int quantity;
+    int quantity;
 
     @ManyToMany
     @JoinTable(
             name = "donation_category",
             joinColumns = @JoinColumn(name = "donation_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private List<Category> categories;
+    List<Category> categories;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "institution_id")
-    private Institution institution;
-    private String street;
-    private String city;
-    private String zipCode;
+    Institution institution;
+    String street;
+    String city;
+    String zipCode;
 
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDate picUpDate;
-    private Time pickUpTime;
-    private String pickUpComment;
+    LocalDate picUpDate;
+    Time pickUpTime;
+    String pickUpComment;
 
 //    public int getQuantity() {
 //        return quantity;

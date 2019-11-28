@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 //TODO czy warto pisać repository?
 //TODO kiedy i gdzie ma być Transactional?
-//TODO czemu app.js nie działa i czy powinnam tam coś zmieniać?
+
 
 
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {

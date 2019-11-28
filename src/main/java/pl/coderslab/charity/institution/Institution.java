@@ -8,8 +8,6 @@ import org.hibernate.annotations.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-//TODO czy jest jakaś przyjęta kolejność wpisywania adnotacji np przy lomboku
-//TODO czy lepiej dać lombok @Data czy tylko getery i setery
 @Getter
 @Setter
 @Entity
