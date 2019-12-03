@@ -12,14 +12,14 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    public HomeController(InstitutionService institutionService, DonationService donationService) {
-        this.institutionService = institutionService;
-        this.donationService = donationService;
-    }
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
+    public HomeController(InstitutionService institutionService, DonationService donationService) {
+        this.institutionService = institutionService;
+        this.donationService = donationService;
+    }
 
     @RequestMapping("/")
     public String homeAction(Model model) {
@@ -29,6 +29,7 @@ public class HomeController {
         model.addAttribute("institutions", institutions);
         model.addAttribute("quantityOfDonations", quantityOfDonations);
         model.addAttribute("numberOfInstitutions", numberOfInstitutions);
+
         return "index";
     }
 

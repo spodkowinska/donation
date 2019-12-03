@@ -8,9 +8,56 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Document</title>
+    <title>Charity</title>
 
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="<c:url value="resources/js/validation.js"/>"></script>
+    <script type="text/javascript">
+        $("#form").validate({
+            rules: {
+                quantity: {
+                    required: true,
+                    min: 3,
+                    max: 10
+                },
+                categories: {
+                    required: true
+                },
+                institution: {
+                    required: true
+                },
+                zipcode: "required",
+                pickUpDate: {
+                    required: true,
+                    future: true
+                },
+                pickUpTime: "required"
+            },
+            // Specify validation error messages
+            messages: {
+                quantity: {
+                    required: "Proszę uzupełnić liczbę worków",
+                    min: "Minimalna ilość worków wynosi 3",
+                    max: "Maksymalna ilość worków wynosi 10"
+                },
+                categories: {
+                    required: "Proszę uzupełnić przynajmniej jedną kategorię"
+                },
+                institution: {
+                    required: "Proszę uzupełnić instytucję"
+                },
+                zipcode: "Podano niepoprawny kod pocztowy",
+                pickUpDate: {
+                    required: "Podano niepoprawną datę",
+                    future: "Podana data nie jest w przyszłosci"
+                },
+                pickUpTime: "Proszę uzupełnić godzinę"
+            },
+        });
+    </script>
 </head>
 <body>
 <header>

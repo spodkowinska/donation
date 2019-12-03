@@ -15,7 +15,6 @@ import javax.validation.constraints.NotNull;
 public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @OneToMany(mappedBy = "institution")
     Long id;
 
     @NotNull

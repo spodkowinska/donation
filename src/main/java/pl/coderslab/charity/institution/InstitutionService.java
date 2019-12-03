@@ -18,7 +18,7 @@ public class InstitutionService {
     private final InstitutionRepository institutionRepository;
 
     public List<Institution> findAll(){return institutionRepository.findAll();}
-
+//todo za pomocą query
     public long sumOfInstitutions(){
         List<Institution>institutionsList = findAll();
         long sum = institutionsList.stream().count();

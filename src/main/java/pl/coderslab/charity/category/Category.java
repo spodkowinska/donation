@@ -5,8 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-//TODO czy to standardowa technika aby załączać w paru miejscach charset?
-//TODO czemu się podswietla include?
+
+
 @Entity
 @Getter
 @Setter
@@ -18,4 +18,23 @@ public class Category {
 
     @NotNull
     String name;
+
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+
+
+
 }

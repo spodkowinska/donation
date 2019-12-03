@@ -10,7 +10,6 @@ import java.util.List;
 
 @Service
 @Transactional
-
 public class DonationService {
     private final DonationRepository donationRepository;
 
@@ -18,7 +17,7 @@ public class DonationService {
     public DonationService(DonationRepository donationRepository) {
         this.donationRepository = donationRepository;
     }
-
+//TODO nativequery
     public int sumOfBags() {
         List<Donation> donationsList = donationRepository.findAll();
 
