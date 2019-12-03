@@ -15,6 +15,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
     <script src="<c:url value="resources/js/validation.js"/>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+    $('#my_form').change(function(){
+    var str = "First name: " + $( "#name" ).val() + "<br>Last name: " + $( "#surname" ).val() +"<br>";
+
+    $('#check_before_submit').html( str );
+    });
+    });
+    </script>
     <script type="text/javascript">
         $("#form").validate({
             rules: {

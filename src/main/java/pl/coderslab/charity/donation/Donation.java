@@ -49,7 +49,7 @@ public class Donation {
 
     @Pattern(regexp = "\\d{2}-\\d{3}", message = "{zipCode.pattern}")
     String zipCode;
-    @Pattern(regexp = "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$", message="{phone.pattern")
+    @Pattern(regexp = "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$", message="{phone.pattern}")
     String phone;
 
     @NotNull(message = "{pickUpDate.notNull}")
@@ -60,8 +60,16 @@ public class Donation {
     @NotNull(message = "{pickUpTime.notNull}")
     LocalTime pickUpTime;
 
-    @Range(min=5, max=255, message = "{size}")
+    @Size(min=1, max=255, message = "{size}")
     String pickUpComment;
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 
 //    public LocalDate getPickUpDate() {
 //        return pickUpDate;
