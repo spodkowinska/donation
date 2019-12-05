@@ -28,7 +28,7 @@ public class HomeController {
         this.userServiceImpl = userServiceImpl;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String homeAction(Model model) {
         List<Institution> institutions = institutionService.findAll();
         int quantityOfDonations = donationService.sumOfBags();

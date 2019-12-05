@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
         .web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import pl.coderslab.charity.user.SpringDataUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -17,20 +18,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
                 http.authorizeRequests()
-                        .antMatchers("/").permitAll()
+                        .antMatchers("/index").permitAll()
                         .antMatchers("/resources/**").permitAll()
                         .antMatchers("/img/**").permitAll()
                         .antMatchers("/logoutSuccess").permitAll()
                         .antMatchers("/login").permitAll()
-                        .antMatchers("/registration/**").permitAll()
+                        .antMatchers("/register/**").permitAll()
                         .antMatchers("/form/**").hasAnyRole("USER", "ADMIN")
                         .antMatchers("/admin/**").hasRole("ADMIN")
-                        .anyRequest().permitAll()
-//                        .authenticated()
+                        .anyRequest()
+                        .authenticated()
+//                        .permitAll()
+
                         .and()
                         .formLogin()
                         .loginPage("/login").failureUrl("/login?error=true")
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/index")
                         .usernameParameter("username")
                         .passwordParameter("password")
                         .and().logout()
@@ -43,5 +46,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Bean
         public BCryptPasswordEncoder passwordEncoder() {
                 return new BCryptPasswordEncoder();
+        }
+
+        @Bean
+        public SpringDataUserDetailsService customUserDetailsService() {
+                return new SpringDataUserDetailsService();
         }
 }

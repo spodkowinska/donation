@@ -11,7 +11,7 @@ public interface DonationRepository extends JpaRepository<Donation, Long> {
     @Query(value = "select quantity from donations", nativeQuery = true)
     List<Integer>findAllQuantities();
 
-    @Query(value="select institutions from donations", nativeQuery = true)
+    @Query(value="select institution_id from donations", nativeQuery = true)
     List <Integer>findAllDonatedInstitutions();
 
 }
