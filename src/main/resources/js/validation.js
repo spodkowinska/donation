@@ -1,5 +1,5 @@
 
-$(function () {
+$(function() {
 
     $("#donationForm").validate({
             rules: {
@@ -45,6 +45,4 @@ $(function () {
             donationForm.submit();
         }
         });
-});
-
-
+ });
